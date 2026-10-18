@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Web Shortcuts</title>
+<meta name="description" content="Koleksi shortcut web pribadi untuk membangun project website.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%2308080b'/><path d='M50 18l10 24 24 8-24 10-10 24-10-24-24-10 24-8z' fill='%23d9b872'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --onyx:#08080b;
+  --graphite:#121218;
+  --graphite-2:#1a1a22;
+  --line:rgba(243,236,224,.09);
+  --line-strong:rgba(217,184,114,.35);
+  --gold:#d9b872;
+  --gold-deep:#a98842;
+  --ivory:#f3ece0;
+  --muted:#8f8a80;
+  --serif:'Cormorant Garamond','Times New Roman',serif;
+  --sans:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  background:var(--onyx);
+  color:var(--ivory);
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+/* ambient light */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(900px 500px at 50% -8%,rgba(217,184,114,.14),transparent 70%),
+    radial-gradient(600px 400px at 85% 30%,rgba(169,136,66,.06),transparent 70%);
+}
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:8px}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 28px}
+
+/* ticker */
+.ticker{position:relative;z-index:1;border-bottom:1px solid var(--line);background:rgba(8,8,11,.7);backdrop-filter:blur(8px);height:46px;overflow:hidden}
+.ticker .tradingview-widget-container{height:46px}
+
+/* hero */
+.hero{text-align:center;padding:84px 0 44px;animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.crest{
+  width:64px;height:64px;margin:0 auto 26px;border-radius:20px;
+  display:grid;place-items:center;
+  background:linear-gradient(145deg,var(--graphite-2),var(--onyx));
+  border:1px solid var(--line-strong);
+  box-shadow:0 0 0 6px rgba(217,184,114,.05),0 18px 50px -12px rgba(217,184,114,.35);
+}
+.crest svg{width:28px;height:28px;fill:var(--gold)}
+.when{font-size:13px;color:var(--muted);letter-spacing:.04em;margin-bottom:14px;min-height:20px}
+h1{
+  font-family:var(--serif);font-weight:600;
+  font-size:clamp(64px,11vw,128px);line-height:.92;letter-spacing:-.02em;
+  background:linear-gradient(180deg,#fff6e0 0%,var(--gold) 55%,var(--gold-deep) 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  padding-bottom:.08em;
+}
+.tag{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.4vw,23px);line-height:1.4;color:var(--muted);margin:16px auto 0;max-width:620px;min-height:2.8em;display:flex;align-items:center;justify-content:center;transition:opacity .6s ease,transform .6s ease}
+.tag.out{opacity:0;transform:translateY(6px)}
+
+/* search */
+.search{
+  position:relative;max-width:560px;margin:40px auto 0;
+}
+.search input{
+  width:100%;height:56px;padding:0 74px 0 54px;
+  border-radius:999px;border:1px solid var(--line);
+  background:rgba(18,18,24,.8);color:var(--ivory);font:500 15px var(--sans);
+  transition:border-color .25s,box-shadow .25s;
+}
+.search input::placeholder{color:#6d695f}
+.search input:focus{outline:none;border-color:var(--line-strong);box-shadow:0 0 0 5px rgba(217,184,114,.08),0 20px 60px -20px rgba(217,184,114,.35)}
+.search .ico{position:absolute;left:21px;top:50%;translate:0 -50%;width:18px;height:18px;stroke:var(--muted);fill:none;stroke-width:2}
+.search kbd{
+  position:absolute;right:18px;top:50%;translate:0 -50%;
+  font:600 11px var(--sans);color:var(--muted);
+  border:1px solid var(--line);border-radius:7px;padding:4px 8px;background:var(--onyx);
+}
+
+/* toolbar */
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:56px 0 12px;flex-wrap:wrap}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{
+  border:1px solid var(--line);background:transparent;border-radius:999px;
+  padding:9px 16px;font-size:13px;font-weight:600;color:var(--muted);
+  transition:all .2s;
+}
+.chip:hover{color:var(--ivory);border-color:var(--line-strong)}
+.chip[aria-pressed="true"]{color:#1a1409;background:linear-gradient(135deg,#f0d79a,var(--gold));border-color:transparent}
+.chip small{opacity:.65;margin-left:6px;font-weight:600}
+.add{
+  display:inline-flex;align-items:center;gap:9px;border:0;border-radius:999px;
+  padding:12px 22px;font-weight:700;font-size:14px;color:#1a1409;
+  background:linear-gradient(135deg,#f0d79a,var(--gold) 60%,var(--gold-deep));
+  box-shadow:0 12px 34px -10px rgba(217,184,114,.6);
+  transition:transform .2s,box-shadow .2s;
+}
+.add:hover{transform:translateY(-2px);box-shadow:0 18px 40px -10px rgba(217,184,114,.75)}
+.add svg{width:15px;height:15px;stroke:currentColor;stroke-width:2.5;fill:none}
+
+/* sections */
+section.group{margin-top:44px}
+.group-head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.group-head h2{font-family:var(--serif);font-weight:600;font-size:32px;letter-spacing:.005em}
+.group-head p{font-size:13px;color:var(--muted)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(262px,1fr));gap:16px}
+
+/* card */
+.card{
+  --mx:50%;--my:50%;
+  position:relative;isolation:isolate;overflow:hidden;
+  border-radius:20px;padding:20px 20px 18px;min-height:176px;
+  display:flex;flex-direction:column;
+  background:linear-gradient(160deg,var(--graphite),#0d0d12);
+  border:1px solid var(--line);
+  transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .3s;
+}
+.card::before{ /* spotlight fill */
+  content:"";position:absolute;inset:0;z-index:-1;opacity:0;transition:opacity .35s;
+  background:radial-gradient(360px circle at var(--mx) var(--my),rgba(217,184,114,.16),transparent 60%);
+}
+.card::after{ /* spotlight border */
+  content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;opacity:0;transition:opacity .35s;pointer-events:none;
+  background:radial-gradient(240px circle at var(--mx) var(--my),var(--gold),transparent 65%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+}
+.card:hover{transform:translateY(-4px)}
+.card:hover::before,.card:hover::after{opacity:1}
+.card .go{position:absolute;inset:0;z-index:1;border-radius:inherit}
+.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.logo{
+  width:50px;height:50px;border-radius:15px;display:grid;place-items:center;position:relative;overflow:hidden;
+  background:linear-gradient(145deg,#24242d,#15151b);border:1px solid var(--line);
+  font-family:var(--serif);font-weight:700;font-size:24px;color:var(--gold);
+}
+.logo img{position:absolute;inset:9px;width:32px;height:32px;object-fit:contain;border-radius:6px;background:transparent}
+.acts{display:flex;gap:6px;position:relative;z-index:2}
+.icon-btn{
+  width:32px;height:32px;border-radius:10px;border:1px solid transparent;background:transparent;
+  display:grid;place-items:center;color:var(--muted);transition:all .2s;
+}
+.icon-btn:hover{color:var(--gold);background:rgba(217,184,114,.1);border-color:var(--line)}
+.icon-btn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8}
+.icon-btn.on{color:var(--gold)}
+.icon-btn.on svg{fill:var(--gold)}
+.card h3{font-size:17px;font-weight:700;letter-spacing:-.005em}
+.card p{font-size:13px;line-height:1.55;color:var(--muted);margin-top:6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card .host{margin-top:auto;padding-top:14px;font-size:12px;color:#6d695f;display:flex;align-items:center;gap:6px}
+.card .host svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2;transition:transform .3s}
+.card:hover .host svg{transform:translate(2px,-2px);stroke:var(--gold)}
+.badge{font-size:10.5px;font-weight:700;color:var(--gold);border:1px solid var(--line-strong);border-radius:999px;padding:2px 8px;margin-left:8px;vertical-align:2px}
+
+.empty{
+  text-align:center;padding:70px 20px;border:1px dashed var(--line);border-radius:22px;margin-top:30px;color:var(--muted);
+}
+.empty b{display:block;font-family:var(--serif);font-size:28px;color:var(--ivory);margin-bottom:8px;font-weight:600}
+.empty button{margin-top:20px}
+
+#calendar{margin-top:44px}
+.cal-frame{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:linear-gradient(160deg,var(--graphite),#0d0d12);height:620px;position:relative}
+.cal-frame .tradingview-widget-container,.cal-frame .tradingview-widget-container__widget{height:100%;width:100%}
+.cal-note{font-size:12px;color:#6d695f;margin-top:10px}
+footer{position:relative;z-index:1;margin-top:100px;border-top:1px solid var(--line);padding:30px 0 40px;text-align:center;font-size:12px;color:#6d695f;letter-spacing:.04em}
+
+/* dialog */
+dialog{
+  margin:auto;border:1px solid var(--line-strong);border-radius:24px;padding:0;width:min(460px,92vw);
+  background:linear-gradient(160deg,var(--graphite-2),var(--graphite));color:var(--ivory);
+  box-shadow:0 40px 120px -20px rgba(0,0,0,.9),0 0 80px -30px rgba(217,184,114,.4);
+}
+dialog::backdrop{background:rgba(4,4,6,.72);backdrop-filter:blur(6px)}
+dialog form{padding:30px}
+dialog h4{font-family:var(--serif);font-size:30px;font-weight:600;margin-bottom:4px}
+dialog .sub{font-size:13px;color:var(--muted);margin-bottom:22px}
+label{display:block;font-size:12.5px;font-weight:600;color:var(--muted);margin:14px 0 7px}
+input.f,select.f{
+  width:100%;height:46px;border-radius:12px;border:1px solid var(--line);background:var(--onyx);color:var(--ivory);
+  padding:0 14px;font:500 14px var(--sans);
+}
+input.f:focus,select.f:focus{outline:none;border-color:var(--line-strong);box-shadow:0 0 0 4px rgba(217,184,114,.08)}
+.row{display:flex;gap:10px;justify-content:flex-end;margin-top:26px}
+.ghost{border:1px solid var(--line);background:transparent;border-radius:999px;padding:12px 20px;font-weight:600;font-size:14px;color:var(--muted)}
+.ghost:hover{color:var(--ivory);border-color:var(--line-strong)}
+
+.toast{
+  position:fixed;left:50%;bottom:28px;translate:-50% 20px;opacity:0;pointer-events:none;z-index:50;
+  background:var(--graphite-2);border:1px solid var(--line-strong);border-radius:999px;padding:12px 22px;font-size:13.5px;font-weight:600;
+  transition:all .35s cubic-bezier(.2,.7,.2,1);
+}
+.toast.show{opacity:1;translate:-50% 0}
+
+@media (max-width:640px){
+  .wrap{padding:0 18px}
+  .hero{padding:60px 0 30px}
+  .toolbar{margin-top:40px}
+  .search kbd{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<div class="ticker" aria-label="Harga pasar TradingView">
+  <div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <script src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+    {
+      "symbols":[
+        {"proName":"BITSTAMP:BTCUSD","title":"Bitcoin"},
+        {"proName":"BITSTAMP:ETHUSD","title":"Ethereum"},
+        {"proName":"OANDA:XAUUSD","title":"Emas"},
+        {"proName":"FX_IDC:USDIDR","title":"USD/IDR"},
+        {"proName":"FOREXCOM:SPXUSD","title":"S&P 500"},
+        {"proName":"NASDAQ:NVDA","title":"NVIDIA"}
+      ],
+      "showSymbolLogo":true,
+      "colorTheme":"dark",
+      "isTransparent":true,
+      "displayMode":"adaptive",
+      "locale":"id"
+    }
+    </script>
+  </div>
+</div>
+
+<main class="wrap">
+  <header class="hero">
+    <div class="crest" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z"/></svg>
+    </div>
+    <div class="when" id="when"></div>
+    <h1>My Web Shortcuts</h1>
+    <p class="tag" id="tag" aria-live="polite"></p>
+
+    <div class="search">
+      <svg class="ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input id="q" class="f-search" type="search" placeholder="Cari shortcut web…" autocomplete="off" aria-label="Cari shortcut web">
+      <kbd>/</kbd>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <div class="chips" id="chips" role="group" aria-label="Filter kategori"></div>
+    <button class="add" id="openAdd"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Tambah Web</button>
+  </div>
+
+  <div id="content"></div>
+
+  <section class="group" id="calendar" hidden>
+    <div class="group-head"><h2>Kalender Pasar Global</h2><p>Rilis data ekonomi dunia untuk analisa fundamental, waktu mengikuti zona perangkatmu</p></div>
+    <div class="cal-frame" id="calFrame"></div>
+    <p class="cal-note">Data dari TradingView. Buka kalender penuh lewat kartu di atas untuk filter lebih lengkap.</p>
+  </section>
+</main>
+
+<footer>Spotlight Glow &amp; Velocity 15 Architecture</footer>
+
+<dialog id="dlg">
+  <form method="dialog" id="form">
+    <h4>Tambah web baru</h4>
+    <p class="sub">Tersimpan di browser ini, tidak perlu edit kode.</p>
+    <label for="fName">Nama</label>
+    <input class="f" id="fName" required maxlength="40" placeholder="Contoh: Linear">
+    <label for="fUrl">Alamat web</label>
+    <input class="f" id="fUrl" required placeholder="contoh.com">
+    <label for="fCat">Kategori</label>
+    <select class="f" id="fCat"></select>
+    <label for="fDesc">Deskripsi singkat (opsional)</label>
+    <input class="f" id="fDesc" maxlength="90" placeholder="Untuk apa web ini?">
+    <div class="row">
+      <button type="button" class="ghost" id="cancel">Batal</button>
+      <button type="submit" class="add">Simpan web</button>
+    </div>
+  </form>
+</dialog>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const CATS=[
+  {id:'ai',name:'AI & Asisten',note:'Teman ngoding dan riset'},
+  {id:'kode',name:'Kode & Hosting',note:'Tempat project lahir dan tayang'},
+  {id:'desain',name:'Desain & Aset',note:'Tampilan, font, ikon, dan warna'},
+  {id:'belajar',name:'Dokumentasi & Belajar',note:'Rujukan saat buntu'},
+  {id:'tools',name:'Tools Cepat',note:'Kompres, konversi, dan rapikan'},
+  {id:'trading',name:'Trading & Pasar',note:'Grafik dan harga'}
+];
+
+/* [nama, url, kategori, deskripsi] */
+const SITES=[
+  ['Kimi Code','https://www.kimi.com/code','ai','Agen ngoding dari Moonshot AI untuk terminal dan VS Code'],
+  ['Claude','https://claude.ai','ai','Asisten AI untuk menulis, riset, dan membuat kode'],
+  ['OpenAI','https://chatgpt.com','ai','ChatGPT untuk tanya jawab dan bantuan ngoding'],
+  ['Gemini','https://gemini.google.com','ai','Asisten AI dari Google dengan integrasi Workspace'],
+  ['Google AI Studio','https://aistudio.google.com','ai','Coba model Gemini dan ambil API key gratis'],
+  ['Perplexity','https://www.perplexity.ai','ai','Mesin pencari AI lengkap dengan sumber'],
+  ['DeepSeek','https://chat.deepseek.com','ai','Model AI terbuka yang kuat untuk coding'],
+  ['Hugging Face','https://huggingface.co','ai','Pusat model, dataset, dan demo AI'],
+
+  ['GitHub','https://github.com','kode','Simpan kode dan tayangkan lewat GitHub Pages'],
+  ['Vercel','https://vercel.com','kode','Deploy website modern dalam hitungan detik'],
+  ['Netlify','https://www.netlify.com','kode','Hosting statis dengan form dan fungsi serverless'],
+  ['Cloudflare Pages','https://pages.cloudflare.com','kode','Hosting cepat dengan CDN global dan domain gratis'],
+  ['Supabase','https://supabase.com','kode','Database Postgres, login, dan storage siap pakai'],
+  ['Firebase','https://firebase.google.com','kode','Backend Google: database, auth, dan hosting'],
+  ['CodePen','https://codepen.io','kode','Uji coba HTML, CSS, dan JavaScript langsung di browser'],
+  ['StackBlitz','https://stackblitz.com','kode','Editor Node.js penuh yang jalan di browser'],
+  ['Replit','https://replit.com','kode','Ngoding, jalankan, dan bagikan project online'],
+  ['VS Code Web','https://vscode.dev','kode','Editor VS Code langsung dari browser'],
+
+  ['Figma','https://www.figma.com','desain','Rancang tampilan website sebelum dikodekan'],
+  ['Dribbble','https://dribbble.com','desain','Inspirasi desain UI dari para desainer'],
+  ['Awwwards','https://www.awwwards.com','desain','Website terbaik dunia sebagai bahan referensi'],
+  ['Coolors','https://coolors.co','desain','Buat palet warna serasi dengan sekali tekan'],
+  ['Google Fonts','https://fonts.google.com','desain','Ribuan font gratis untuk website'],
+  ['Fontshare','https://www.fontshare.com','desain','Font berkualitas tinggi, gratis untuk komersial'],
+  ['Unsplash','https://unsplash.com','desain','Foto bebas pakai beresolusi tinggi'],
+  ['Lucide','https://lucide.dev','desain','Ikon SVG rapi dan konsisten'],
+  ['Uiverse','https://uiverse.io','desain','Tombol, loader, dan kartu siap salin'],
+  ['21st.dev','https://21st.dev','desain','Komponen React dan Tailwind siap tempel'],
+
+  ['MDN Web Docs','https://developer.mozilla.org','belajar','Rujukan resmi HTML, CSS, dan JavaScript'],
+  ['Tailwind CSS','https://tailwindcss.com','belajar','Dokumentasi framework CSS berbasis utilitas'],
+  ['shadcn/ui','https://ui.shadcn.com','belajar','Komponen UI yang bisa kamu salin dan ubah'],
+  ['Can I use','https://caniuse.com','belajar','Cek dukungan fitur web di tiap browser'],
+  ['Stack Overflow','https://stackoverflow.com','belajar','Jawaban untuk hampir semua error'],
+  ['roadmap.sh','https://roadmap.sh','belajar','Peta belajar frontend, backend, dan DevOps'],
+  ['web.dev','https://web.dev','belajar','Panduan performa dan praktik terbaik dari Google'],
+  ['freeCodeCamp','https://www.freecodecamp.org','belajar','Kursus coding gratis dengan latihan langsung'],
+
+  ['TinyPNG','https://tinypng.com','tools','Kecilkan ukuran gambar tanpa terlihat berubah'],
+  ['Squoosh','https://squoosh.app','tools','Kompres gambar ke WebP atau AVIF'],
+  ['SVGOMG','https://jakearchibald.github.io/svgomg/','tools','Rapikan dan perkecil file SVG'],
+  ['Remove.bg','https://www.remove.bg','tools','Hapus latar belakang foto otomatis'],
+  ['Favicon.io','https://favicon.io','tools','Buat favicon dari teks, gambar, atau emoji'],
+  ['Excalidraw','https://excalidraw.com','tools','Papan gambar untuk sketsa alur dan wireframe'],
+  ['Regex101','https://regex101.com','tools','Uji dan jelaskan regular expression'],
+  ['Carbon','https://carbon.now.sh','tools','Ubah potongan kode jadi gambar yang cantik'],
+  ['PageSpeed Insights','https://pagespeed.web.dev','tools','Ukur kecepatan dan kualitas website'],
+  ['Photopea','https://www.photopea.com','tools','Editor mirip Photoshop yang jalan di browser'],
+
+  ['TradingView','https://www.tradingview.com','trading','Grafik, indikator, dan ide trading dari komunitas'],
+  ['TradingView Chart','https://www.tradingview.com/chart/','trading','Langsung buka layar grafik penuh'],
+  ['Kalender Ekonomi TradingView','https://www.tradingview.com/economic-calendar/','trading','Jadwal rilis data ekonomi dunia untuk analisa fundamental'],
+  ['Forex Factory','https://www.forexfactory.com/calendar','trading','Kalender berita forex dengan tingkat dampak tiap rilis'],
+  ['Kalender Investing.com','https://id.investing.com/economic-calendar/','trading','Kalender ekonomi global lengkap dalam bahasa Indonesia'],
+  ['CoinGecko','https://www.coingecko.com','trading','Harga dan data ribuan aset kripto'],
+  ['Investing.com','https://id.investing.com','trading','Berita pasar, kalender ekonomi, dan harga']
+];
+
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const load=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))??d}catch{return d}};
+const save=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch{}};
+
+let custom=load('shortcuts.custom',[]);
+let favs=new Set(load('shortcuts.fav',[]));
+let state={q:'',cat:'semua'};
+
+const host=u=>{try{return new URL(u).hostname.replace(/^www\./,'')}catch{return u}};
+const allSites=()=>SITES.map(s=>({name:s[0],url:s[1],cat:s[2],desc:s[3],custom:false})).concat(custom.map(c=>({...c,custom:true})));
+
+const ICONS={
+  star:'<svg viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg>',
+  trash:'<svg viewBox="0 0 24 24"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></svg>',
+  out:'<svg viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg>'
+};
+
+function card(s){
+  const h=host(s.url);
+  const isFav=favs.has(s.url);
+  return `<article class="card" data-url="${esc(s.url)}">
+    <a class="go" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer" aria-label="Buka ${esc(s.name)}"></a>
+    <div class="top">
+      <div class="logo">${esc(s.name.charAt(0).toUpperCase())}<img src="https://www.google.com/s2/favicons?domain=${encodeURIComponent(h)}&sz=128" alt="" loading="lazy" onerror="this.remove()"></div>
+      <div class="acts">
+        <button class="icon-btn ${isFav?'on':''}" data-fav="${esc(s.url)}" aria-label="${isFav?'Lepas dari favorit':'Jadikan favorit'}" title="Favorit">${ICONS.star}</button>
+        ${s.custom?`<button class="icon-btn" data-del="${esc(s.url)}" aria-label="Hapus ${esc(s.name)}" title="Hapus">${ICONS.trash}</button>`:''}
+      </div>
+    </div>
+    <h3>${esc(s.name)}${s.custom?'<span class="badge">Milikmu</span>':''}</h3>
+    <p>${esc(s.desc||'Shortcut pribadi')}</p>
+    <div class="host">${esc(h)}${ICONS.out}</div>
+  </article>`;
+}
+
+function group(title,note,list){
+  return `<section class="group"><div class="group-head"><h2>${esc(title)}</h2><p>${esc(note)}</p></div><div class="grid">${list.map(card).join('')}</div></section>`;
+}
+
+function render(){
+  const q=state.q.trim().toLowerCase();
+  const all=allSites();
+  const match=s=>!q||(s.name+' '+(s.desc||'')+' '+host(s.url)).toLowerCase().includes(q);
+  const visible=all.filter(match);
+
+  // chips
+  const chips=[{id:'semua',name:'Semua',n:visible.length}].concat(
+    (favs.size?[{id:'favorit',name:'Favorit',n:visible.filter(s=>favs.has(s.url)).length}]:[]),
+    CATS.map(c=>({id:c.id,name:c.name,n:visible.filter(s=>s.cat===c.id).length}))
+  );
+  $('#chips').innerHTML=chips.map(c=>`<button class="chip" data-cat="${c.id}" aria-pressed="${state.cat===c.id}">${esc(c.name)}<small>${c.n}</small></button>`).join('');
+
+  let html='';
+  if(state.cat==='semua'){
+    const f=visible.filter(s=>favs.has(s.url));
+    if(f.length) html+=group('Favorit','Yang paling sering kamu buka',f);
+    CATS.forEach(c=>{
+      const l=visible.filter(s=>s.cat===c.id);
+      if(l.length) html+=group(c.name,c.note,l);
+    });
+  }else if(state.cat==='favorit'){
+    html=group('Favorit','Yang paling sering kamu buka',visible.filter(s=>favs.has(s.url)));
+  }else{
+    const c=CATS.find(x=>x.id===state.cat);
+    const l=visible.filter(s=>s.cat===state.cat);
+    if(l.length) html=group(c.name,c.note,l);
+  }
+  if(!html){
+    html=`<div class="empty"><b>${q?'Tidak ada hasil':'Belum ada web di sini'}</b>${q?`Tidak ada shortcut yang cocok dengan “${esc(state.q)}”. Simpan sebagai web baru?`:'Tambahkan web pertamamu.'}<br><button class="add" id="emptyAdd">Tambah Web</button></div>`;
+  }
+  $('#content').innerHTML=html;
+  const showCal=!q&&(state.cat==='semua'||state.cat==='trading');
+  $('#calendar').hidden=!showCal;
+  if(showCal) loadCalendar();
+}
+
+let calLoaded=false;
+function loadCalendar(){
+  if(calLoaded) return; calLoaded=true;
+  const box=document.createElement('div');
+  box.className='tradingview-widget-container';
+  box.innerHTML='<div class="tradingview-widget-container__widget"></div>';
+  const sc=document.createElement('script');
+  sc.src='https://s3.tradingview.com/external-embedding/embed-widget-events.js';
+  sc.async=true;
+  sc.textContent=JSON.stringify({
+    colorTheme:'dark',isTransparent:true,width:'100%',height:'100%',locale:'id',
+    importanceFilter:'-1,0,1',
+    countryFilter:'us,eu,jp,gb,cn,id,au,ca,ch,nz,de'
+  });
+  box.appendChild(sc);
+  $('#calFrame').appendChild(box);
+}
+
+/* spotlight glow */
+let raf=0;
+$('#content').addEventListener('pointermove',e=>{
+  const c=e.target.closest('.card'); if(!c) return;
+  cancelAnimationFrame(raf);
+  raf=requestAnimationFrame(()=>{
+    const r=c.getBoundingClientRect();
+    c.style.setProperty('--mx',(e.clientX-r.left)+'px');
+    c.style.setProperty('--my',(e.clientY-r.top)+'px');
+  });
+});
+
+/* clicks */
+document.addEventListener('click',e=>{
+  const fav=e.target.closest('[data-fav]');
+  if(fav){
+    const u=fav.dataset.fav;
+    favs.has(u)?favs.delete(u):favs.add(u);
+    save('shortcuts.fav',[...favs]);
+    if(!favs.size&&state.cat==='favorit') state.cat='semua';
+    render(); return;
+  }
+  const del=e.target.closest('[data-del]');
+  if(del){
+    const u=del.dataset.del;
+    custom=custom.filter(c=>c.url!==u); favs.delete(u);
+    save('shortcuts.custom',custom); save('shortcuts.fav',[...favs]);
+    render(); toast('Web dihapus'); return;
+  }
+  const chip=e.target.closest('[data-cat]');
+  if(chip){state.cat=chip.dataset.cat;render();return}
+  if(e.target.id==='emptyAdd') openDlg(state.q);
+});
+
+$('#q').addEventListener('input',e=>{state.q=e.target.value;render()});
+
+/* keyboard */
+document.addEventListener('keydown',e=>{
+  const typing=/INPUT|SELECT|TEXTAREA/.test(document.activeElement.tagName);
+  if((e.key==='/'&&!typing)||((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k')){e.preventDefault();$('#q').focus();$('#q').select()}
+  if(e.key==='Escape'&&document.activeElement===$('#q')){$('#q').value='';state.q='';render();$('#q').blur()}
+});
+
+/* dialog */
+const dlg=$('#dlg');
+$('#fCat').innerHTML=CATS.map(c=>`<option value="${c.id}">${esc(c.name)}</option>`).join('');
+function openDlg(prefill=''){
+  $('#form').reset();
+  if(prefill) $('#fName').value=prefill;
+  dlg.showModal(); setTimeout(()=>$('#fName').focus(),30);
+}
+$('#openAdd').addEventListener('click',()=>openDlg());
+$('#cancel').addEventListener('click',()=>dlg.close());
+dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
+$('#form').addEventListener('submit',e=>{
+  let url=$('#fUrl').value.trim();
+  if(!/^https?:\/\//i.test(url)) url='https://'+url;
+  try{new URL(url)}catch{e.preventDefault();toast('Alamat web belum valid');return}
+  const all=allSites();
+  if(all.some(s=>s.url===url)){toast('Web ini sudah ada');return}
+  custom.push({name:$('#fName').value.trim(),url,cat:$('#fCat').value,desc:$('#fDesc').value.trim()});
+  save('shortcuts.custom',custom);
+  state.q='';$('#q').value='';state.cat='semua';
+  render(); toast('Web disimpan');
+});
+
+/* toast */
+let tt;
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('show'),2200)}
+
+/* kata penyemangat */
+const QUOTES=[
+  'Karya besar berawal dari langkah kecil yang dilakukan secara konsisten.',
+  'Ketekunan adalah fondasi dari setiap pencapaian yang berarti.',
+  'Kualitas lahir dari kebiasaan, bukan dari kebetulan.',
+  'Setiap tantangan teknis adalah kesempatan untuk memperdalam keahlian.',
+  'Kemajuan yang stabil lebih berharga daripada semangat yang sesaat.',
+  'Mulailah dengan apa yang tersedia, sempurnakan seiring waktu.',
+  'Disiplin hari ini menentukan hasil yang akan dipetik esok hari.',
+  'Kegagalan adalah bagian dari proses menuju penguasaan.',
+  'Ketelitian pada hal kecil menghasilkan mutu yang besar.',
+  'Pengetahuan yang diamalkan akan tumbuh menjadi kemampuan.',
+  'Proyek yang diselesaikan lebih bermakna daripada rencana yang tertunda.',
+  'Kesabaran dalam berproses akan terbayar oleh hasil yang layak dibanggakan.',
+  'Kerja yang terarah selalu mengungguli kerja yang tergesa-gesa.',
+  'Keberhasilan dibangun sedikit demi sedikit, bukan dalam semalam.',
+  'Fokus pada tujuan akan membuat setiap langkah menjadi lebih jelas.',
+  'Kemauan untuk terus belajar adalah modal terkuat seorang profesional.',
+  'Hasil terbaik diperoleh melalui perencanaan yang matang dan pelaksanaan yang tekun.',
+  'Setiap baris kode yang ditulis dengan cermat adalah investasi bagi masa depan.',
+  'Integritas dalam bekerja tercermin dari kualitas yang dijaga ketika tidak ada yang mengawasi.',
+  'Kesempurnaan dicapai melalui perbaikan yang berkelanjutan.',
+  'Keberanian untuk memulai sama pentingnya dengan keteguhan untuk menyelesaikan.',
+  'Waktu yang dikelola dengan baik adalah sumber daya yang paling berharga.',
+  'Keahlian tidak datang secara instan, melainkan melalui latihan yang berulang.',
+  'Keputusan yang bijak diambil dengan tenang dan berlandaskan pertimbangan yang matang.',
+  'Tujuan yang jelas mengubah usaha biasa menjadi pencapaian yang luar biasa.',
+  'Konsistensi dalam hal sederhana akan menghasilkan perubahan yang signifikan.',
+  'Semoga setiap proyek yang dikerjakan hari ini membawa manfaat bagi banyak orang.'
+];
+let lastQ=-1;
+function nextQuote(first){
+  const el=$('#tag');
+  let i;
+  do{i=Math.floor(Math.random()*QUOTES.length)}while(i===lastQ&&QUOTES.length>1);
+  lastQ=i;
+  if(first){el.textContent=QUOTES[i];return}
+  el.classList.add('out');
+  setTimeout(()=>{el.textContent=QUOTES[i];el.classList.remove('out')},600);
+}
+nextQuote(true);
+setInterval(()=>{if(!document.hidden)nextQuote()},15000);
+$('#tag').style.cursor='pointer';
+$('#tag').title='Klik untuk kata lain';
+$('#tag').addEventListener('click',()=>nextQuote());
+
+/* greeting */
+function tick(){
+  const d=new Date();
+  const wib=new Intl.DateTimeFormat('id-ID',{timeZone:'Asia/Jakarta',weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(d);
+  const t=new Intl.DateTimeFormat('id-ID',{timeZone:'Asia/Jakarta',hour:'2-digit',minute:'2-digit',hour12:false}).format(d).replace('.',':');
+  const hr=+new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Jakarta',hour:'numeric',hour12:false}).format(d);
+  const g=hr<11?'Selamat pagi':hr<15?'Selamat siang':hr<18?'Selamat sore':'Selamat malam';
+  $('#when').textContent=`${g}. ${wib}, ${t} WIB`;
+}
+tick(); setInterval(tick,30000);
+
+render();
+</script>
+</body>
+</html>
